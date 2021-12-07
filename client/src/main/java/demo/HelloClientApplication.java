@@ -29,12 +29,6 @@ public class HelloClientApplication {
 		SpringApplication.run(HelloClientApplication.class, args);
 	}
 
-	@Bean
-	@LoadBalanced
-	public WebClient.Builder builder() {
-		return WebClient.builder();
-	}
-
 	@GetMapping("/")
 	public Mono<String> hello() {
 		return client.hello();
